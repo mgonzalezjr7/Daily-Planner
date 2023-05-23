@@ -10,10 +10,9 @@ $(function () {
   // useful when saving the description in local storage?
   
   $(".saveBtn").on("click", function () {
-    var text = ${this}.siblings(".description").val();
-    var hour = $(this).parent().attr("id");
-    localStorage.setItem(hour, text);
-    JSON.paarse(localStorage.getItem(time, text));
+    var text = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+    localStorage.setItem(time, text);
   });
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -45,4 +44,5 @@ $(function () {
       }
     })
   // TODO: Add code to display the current date in the header of the page.
+  $("#currentDay").text(dayjs().format("dddd, MMMM DD"));
 });
